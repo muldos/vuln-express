@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 
+var myLogin = "AKIAJXBOVX5Q2EULDUIA";
+var mypwd = "SqcyDpetv+pCsbNYWHDLE8yR5mJ13MI+4d8NOwtM";
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 // static assets directory

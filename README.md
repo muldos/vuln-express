@@ -44,3 +44,11 @@ Note : pay attention that the netcat command may differs between the host OS & t
 Replace `host.docker.internal` if needed, to open your remote shell where your step 1 netcat processing is listening.
 
    <img src="https://github.com/muldos/vuln-express/raw/master/images/exploited.png" alt="Exploit overview" width="100%" style="margin: 20px;"/>
+
+To trigger the exploit : 
+
+open a terminal and run 
+
+`nc -lv 1337`
+
+Then use the link in the application to open the web shell.
